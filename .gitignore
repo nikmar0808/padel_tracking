@@ -135,6 +135,7 @@ celerybeat.pid
 *.sage.py
 
 # Environments
+padel_tracking_env/
 .env
 .envrc
 .venv
