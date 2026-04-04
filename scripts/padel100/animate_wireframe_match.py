@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
 import os
 import numpy as np
-from data_mapper import get_mens_training_sample, get_womens_training_sample
+from scripts.padel100.data_mapper import get_mens_training_sample, get_womens_training_sample
 from config import WIDTH, HEIGHT
 
 # This script animates the player's skeleton and the ball's trajectory for a specific sequence (like the first Serve).

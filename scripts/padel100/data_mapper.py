@@ -20,12 +20,19 @@ def get_mens_training_sample(target_frame):
     # --- 1. Load Shot Event (CSV) ---
     if not os.path.exists(MENS_SHOTS):
         return "CSV Missing"
-    
+    # --- Load Shot Event (CSV) ---
     df = pd.read_csv(MENS_SHOTS, sep=';')
-    shot_row = df[df['file_name'] == target_frame]
+    # Use .str.upper() to make the search case-insensitive (.png vs .PNG)
+    shot_row = df[df['file_name'].str.upper() == target_frame.upper()]
     
     if shot_row.empty:
-        return f"Frame {target_frame} not found in CSV."
+        # RETURN A DICT INSTEAD OF A STRING TO PREVENT TYPEERROR
+        return {
+            "shot_type": "Empty",
+            "is_hit": 0,
+            "ball_xy": None,
+            "skeleton": None
+        }
 
     # Safely extract the first matching row's values
     is_hit = shot_row.iloc[0]['has_shot']
@@ -71,7 +78,13 @@ def get_mens_training_sample(target_frame):
         print(f"Player: ✅ {len(player_keypoints)} Keypoints Found")
     else:
         print("Player: ❌ Pose data missing")
-
+    if shot_row.empty:
+        return {
+            "shot_type": "None",
+            "is_hit": 0,
+            "ball_xy": None,
+            "skeleton": None
+        }
     return {
         "shot_type": category,
         "is_hit": is_hit,
@@ -83,12 +96,19 @@ def get_womens_training_sample(target_frame):
     # --- 1. Load Shot Event (CSV) ---
     if not os.path.exists(WOMENS_SHOTS):
         return "CSV Missing"
-    
+    # --- Load Shot Event (CSV) ---    
     df = pd.read_csv(WOMENS_SHOTS, sep=';')
-    shot_row = df[df['file_name'] == target_frame]
+    # Use .str.upper() to make the search case-insensitive (.png vs .PNG)
+    shot_row = df[df['file_name'].str.upper() == target_frame.upper()]
     
     if shot_row.empty:
-        return f"Frame {target_frame} not found in CSV."
+        # RETURN A DICT INSTEAD OF A STRING TO PREVENT TYPEERROR
+        return {
+            "shot_type": "Empty",
+            "is_hit": 0,
+            "ball_xy": None,
+            "skeleton": None
+        }
 
     # Safely extract the first matching row's values
     is_hit = shot_row.iloc[0]['has_shot']
@@ -134,7 +154,20 @@ def get_womens_training_sample(target_frame):
         print(f"Player: ✅ {len(player_keypoints)} Keypoints Found")
     else:
         print("Player: ❌ Pose data missing")
-
+    if shot_row.empty:
+        return {
+            "shot_type": "None",
+            "is_hit": 0,
+            "ball_xy": None,
+            "skeleton": None
+        }
+    if shot_row.empty:
+        return {
+            "shot_type": "None",
+            "is_hit": 0,
+            "ball_xy": None,
+            "skeleton": None
+        }
     return {
         "shot_type": category,
         "is_hit": is_hit,
