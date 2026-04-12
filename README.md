@@ -6,6 +6,8 @@ Setup Instructions
 Step 1:
 Python, MiniConda installation
 Create Project Root Directory - PADEL_TRACKING
+
+~~~text
 PADEL_TRACKING/
 │
 ├── configs/
@@ -55,6 +57,7 @@ PADEL_TRACKING/
 ├── requirements.txt
 │
 └── README.md
+~~~
 
 Step 2:
 Create venv padel_tracking_env PADEL_TRACKING
@@ -70,7 +73,7 @@ It is important to run the below scripts in the specified order
 3. Run extract_frames.py
 4. Run sample_frames.py
 5. Run create_annotations_batches.py
-6. Open https://app.cvat.ai
+6. Open https://cvat.ai
     a. Create Project - call is "padel_tracking"
        Add Labels - "ball" and "player" of Type "Rectangle" of different colors
        Click Submit & Open
@@ -106,7 +109,7 @@ Once finished, START THE RETRAINING PROCESS. This involves repeating Steps 11-17
    e.g. for batch_2 - runs\detect\train_batch1_ball_player\weights\best_batch1_ball_player.pt
    Run the script and type batch_n when prompted for input value at the terminal.
 12. Run build_cvat_annotations_batches.py
-13. Open https://app.cvat.ai.
+13. Open https://cvat.ai.
     a. Create Task - call it "padel_ball_player_detection_batch_n", Select Project "padel_tracking",
        Add files from data/interim/annotation_batches/batch_n
        Under Advanced configuration -> Lexicographical, set Overlap size = 0, Segment size = 500
