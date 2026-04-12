@@ -82,7 +82,7 @@ It is important to run the below scripts in the specified order:
 3. Run `extract_frames.py`
 4. Run `sample_frames.py`
 5. Run `create_annotations_batches.py`
-6. **Open CVAT ([https://cvat.ai](https://app.cvat.ai/))**
+6. **Open CVAT ([https://app.cvat.ai](https://app.cvat.ai/))**
     a. Create Project - call is "padel_tracking"
        Add Labels - "ball" and "player" of Type "Rectangle" of different colors
        Click Submit & Open
