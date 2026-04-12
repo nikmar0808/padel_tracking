@@ -1,6 +1,6 @@
 import os
 import cv2
-from config import TRNG_IMAGES_DIR, TRNG_LABELS_DIR, VAL_IMAGES_DIR, VAL_LABELS_DIR
+from config_training import TRNG_IMAGES_DIR, TRNG_LABELS_DIR, VAL_IMAGES_DIR, VAL_LABELS_DIR
 
 image_dirs = [
     TRNG_IMAGES_DIR,
@@ -59,7 +59,7 @@ for image_dir, label_dir in zip(image_dirs, label_dirs):
 
     for img_name in os.listdir(image_dir):
 
-        if not img_name.endswith((".PNG", ".jpg", ".jpeg")):
+        if not img_name.endswith((".png", ".jpg", ".jpeg")):
             continue
 
         total_images += 1

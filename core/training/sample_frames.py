@@ -1,6 +1,6 @@
 import os
 import cv2
-from config import EXTRACTED_FRAMES_DIR, SAMPLED_FRAMES_DIR
+from config_training import EXTRACTED_FRAMES_DIR, SAMPLED_FRAMES_DIR
 
 input_folder = EXTRACTED_FRAMES_DIR
 output_folder = SAMPLED_FRAMES_DIR

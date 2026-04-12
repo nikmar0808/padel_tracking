@@ -1,11 +1,11 @@
 import os
 import shutil
-from config import SAMPLED_FRAMES_DIR, ANNOT_BATCHES_DIR
+from config_training import SAMPLED_FRAMES_DIR, ANNOT_BATCHES_DIR, BATCH_SIZE
 
 source = SAMPLED_FRAMES_DIR
 target = ANNOT_BATCHES_DIR
 
-batch_size = 300
+batch_size = BATCH_SIZE
 
 os.makedirs(target, exist_ok=True)
 

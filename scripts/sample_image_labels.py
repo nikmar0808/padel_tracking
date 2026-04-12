@@ -1,7 +1,7 @@
 import os
 import cv2
 import random
-from config import TRNG_IMAGES_DIR, TRNG_LABELS_DIR, ANNOT_SAMPLES_DIR
+from config_scripts import TRNG_IMAGES_DIR, TRNG_LABELS_DIR, ANNOT_SAMPLES_DIR
 
 images_dir = TRNG_IMAGES_DIR
 labels_dir = TRNG_LABELS_DIR
